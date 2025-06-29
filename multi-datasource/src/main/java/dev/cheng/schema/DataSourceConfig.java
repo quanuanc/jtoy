@@ -17,16 +17,13 @@ public class DataSourceConfig {
     private final String baseUrl;
     private final String username;
     private final String password;
-    private final String driverClassName;
 
     public DataSourceConfig(@Value("${spring.datasource.url}") String baseUrl,
-                            @Value("${spring.datasource.username}") String username, @Value("${spring.datasource" +
-                    ".password}") String password,
-                            @Value("${spring.datasource.driver-class-name}") String driverClassName) {
+                            @Value("${spring.datasource.username}") String username,
+                            @Value("${spring.datasource.password}") String password) {
         this.baseUrl = baseUrl;
         this.username = username;
         this.password = password;
-        this.driverClassName = driverClassName;
     }
 
     @Bean("publicDataSource")
@@ -35,7 +32,6 @@ public class DataSourceConfig {
         dataSource.setJdbcUrl(baseUrl + "?currentSchema=public");
         dataSource.setUsername(username);
         dataSource.setPassword(password);
-        dataSource.setDriverClassName(driverClassName);
         dataSource.setPoolName("HacnPool");
         return dataSource;
     }
@@ -46,7 +42,6 @@ public class DataSourceConfig {
         dataSource.setJdbcUrl(baseUrl + "?currentSchema=hacn");
         dataSource.setUsername(username);
         dataSource.setPassword(password);
-        dataSource.setDriverClassName(driverClassName);
         dataSource.setPoolName("HacnPool");
         return dataSource;
     }
@@ -57,7 +52,6 @@ public class DataSourceConfig {
         dataSource.setJdbcUrl(baseUrl + "?currentSchema=hbcn");
         dataSource.setUsername(username);
         dataSource.setPassword(password);
-        dataSource.setDriverClassName(driverClassName);
         dataSource.setPoolName("HbcnPool");
         return dataSource;
     }

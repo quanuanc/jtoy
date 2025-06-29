@@ -46,13 +46,7 @@ public class SchemaFilter extends OncePerRequestFilter {
     }
 
     private SchemaType determineSchemaByUser(String username) {
-        return switch (username) {
-            case "user1" -> SchemaType.HACN;
-            case "user2" -> SchemaType.HBCN;
-            default -> {
-                log.warn("Unknown user: {}, defaulting to HACN schema", username);
-                yield SchemaType.HACN;
-            }
-        };
+        int lastDigit = Integer.parseInt(username.substring(4, 5));
+        return lastDigit % 2 == 0 ? SchemaType.HACN : SchemaType.HBCN;
     }
 }
