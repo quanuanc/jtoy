@@ -32,7 +32,7 @@ public class DataSourceConfig {
         dataSource.setJdbcUrl(baseUrl + "?currentSchema=public");
         dataSource.setUsername(username);
         dataSource.setPassword(password);
-        dataSource.setPoolName("HacnPool");
+        dataSource.setPoolName("PublicPool");
         return dataSource;
     }
 
