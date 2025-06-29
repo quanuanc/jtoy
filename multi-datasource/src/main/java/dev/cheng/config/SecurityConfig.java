@@ -1,6 +1,6 @@
 package dev.cheng.config;
 
-import dev.cheng.multi.SchemaFilter;
+import dev.cheng.schema.SchemaFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

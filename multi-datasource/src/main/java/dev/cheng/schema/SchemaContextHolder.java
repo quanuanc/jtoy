@@ -1,4 +1,4 @@
-package dev.cheng.multi;
+package dev.cheng.schema;
 
 public class SchemaContextHolder {
     private static final ThreadLocal<SchemaType> contextHolder = new ThreadLocal<>();

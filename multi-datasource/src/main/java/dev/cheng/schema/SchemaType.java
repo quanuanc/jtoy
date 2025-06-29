@@ -1,9 +1,10 @@
-package dev.cheng.multi;
+package dev.cheng.schema;
 
 import lombok.Getter;
 
 @Getter
 public enum SchemaType {
+    PUBLIC("public"),
     HACN("hacn"),
     HBCN("hbcn");
 
